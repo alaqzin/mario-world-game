@@ -3,6 +3,10 @@ const pipe = document.querySelector('.pipe');
 const audioJump = document.querySelector('.audiojump');
 const gameOver = document.querySelector('.gameover');
 const textStart = document.querySelector('#text-start');
+const btnReiniciar = document.getElementById('btn-reiniciar');
+const themeSong = document.getElementById('theme-song');
+themeSong.play();
+
 
 const jump = () => {
     mario.classList.add('jump');
@@ -14,6 +18,10 @@ const jump = () => {
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500);
+}
+
+const reiniciarJogo = () => { 
+    window.location.reload(); 
 }
 
 const loop = setInterval(() => {
@@ -51,3 +59,4 @@ const loop = setInterval(() => {
 }, 10);
 
 document.addEventListener('keydown', jump);
+btnReiniciar.addEventListener('click', reiniciarJogo); 
